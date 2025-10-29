@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./integralsimbol.png">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Calculo 1</h1>
+        </header>
+
+        <section>
+            <div class="limites">
+                <h1>Limites</h1>
+                <h2>Divisão de conteudo :</h2>
+                <ul>
+                    <li>Definição intuitiva de limites</li>
+                    <li>Definição formal de limites</li>
+                    <li>Propriedades dos limites</li>
+                    <li>Teorema do confronto</li>
+                    <li>Limites no infinito</li>
+                </ul>
+
+                <h2>Definição intuitiva de limites</h2>
+                <p>O limite de uma função é uma ideia usada para entender o comportamento dessa função quando o valor de entrada se aproxima de um certo número. De forma simples, o limite mostra para qual valor a função está se aproximando, mesmo que ela não chegue exatamente a esse valor.</p>
+                <p>Quando dizemos que o limite de uma função em um ponto é igual a um número, estamos dizendo que, quanto mais perto a variável chega desse ponto, mais perto o valor da função chega daquele número. O limite mostra, portanto, o destino da função, o valor para o qual ela tende.</p>
+                <p>Esse conceito é importante porque nem sempre uma função tem um valor definido em um determinado ponto. Às vezes, há um “buraco” ou uma descontinuidade no gráfico. Mesmo assim, é possível observar o comportamento da função antes e depois desse ponto para descobrir para onde ela está indo.</p>
+                <p>Para que o limite exista, a função precisa se aproximar do mesmo valor quando olhamos tanto pelo lado esquerdo quanto pelo lado direito do ponto. Se os dois lados se aproximarem do mesmo valor, o limite existe. Caso se aproximem de valores diferentes, dizemos que o limite não existe.</p>
+                <p>Em resumo, o limite serve para descrever a tendência de uma função, mostrando como ela se comporta quando se aproxima de um ponto. É uma ferramenta essencial na matemática, especialmente no cálculo, porque ajuda a entender variações, mudanças e o comportamento das funções em situações em que o valor exato não pode ser calculado diretamente.</p>
+            
+                <h2>Definição formal de limites</h2>
+                <p>A definição formal de limite é uma maneira precisa e rigorosa de descrever o comportamento de uma função quando a variável se aproxima de um determinado ponto. Enquanto a definição intuitiva fala sobre a ideia de “aproximação”, a definição formal explica exatamente o que significa essa aproximação, sem deixar espaço para interpretações.</p>
+                <p>De forma formal, dizemos que o limite de uma função em um ponto é igual a um número quando conseguimos garantir que os valores da função fiquem tão próximos quanto quisermos desse número, desde que o valor da variável esteja suficientemente próximo do ponto considerado.</p>
+                <p>Em outras palavras, essa definição estabelece uma relação entre duas aproximações: quanto mais perto colocamos a variável do ponto desejado, mais perto o valor da função deve ficar do valor do limite. Essa relação precisa funcionar para qualquer nível de proximidade que escolhermos, por menor que seja.</p>
+                <p>Isso significa que o limite existe quando conseguimos controlar o quanto a função se aproxima de um número apenas ajustando o quanto nos aproximamos de um certo ponto no eixo da variável. Se, independentemente de quão pequeno seja o intervalo que escolhemos em torno do limite, for possível fazer com que a função permaneça dentro desse intervalo escolhendo valores suficientemente próximos do ponto, então o limite está bem definido.</p>
+                <p>Essa definição é importante porque torna o conceito de limite exato, sem depender apenas da observação de gráficos ou da intuição. É a base para todo o cálculo diferencial e integral, pois a partir dela podemos definir com precisão ideias como continuidade, derivada e integral, que dependem diretamente do conceito formal de limite.</p>
+                <h3>Fórmula da definição formal :</h3>
+                <p>$$\lim_{x \to a} f(x)=L \iff \big(\forall \varepsilon>0\ \exists \delta>0\ \text{tal que}\ 0<|x-a|<\delta \Rightarrow |f(x)-L|<\varepsilon\big)$$</p>
+
+                <h2>Propriedades dos limites</h2>
+                <p><strong>Limite da soma :</strong></p>
+                <p>$$\lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)$$</p>
+                <p><strong>Limite da diferença :</strong></p>
+                <p>$$\lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)$$</p>
+                <p><strong>Limite do produto :</strong></p>
+                <p>$$\lim_{x \to a} [f(x) \cdot g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)$$</p>
+                <p><strong>Limite do quociente :</strong></p>
+                <p>$$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}, \quad \text{se } \lim_{x \to a} g(x) \neq 0$$</p>
+                <p><strong>Limite de uma constante :</strong></p>
+                <p>$$\lim_{x \to a} c = c$$</p>
+                <p><strong>Limite de uma constante vezes uma função :</strong></p>
+                <p>$$\lim_{x \to a} [c \cdot f(x)] = c \cdot \lim_{x \to a} f(x)$$</p>
+                <p><strong>Limite da potência :</strong></p>
+                <p>$$\lim_{x \to a} [f(x)]^n = \left(\lim_{x \to a} f(x)\right)^n$$</p>
+                <p><strong>Limite da raiz :</strong></p>
+                <p>$$\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)}$$</p>
+                <p><strong>Limite da composição de funções</strong></p>
+                <p>$$\lim_{x \to a} g(f(x)) = g\Big(\lim_{x \to a} f(x)\Big), \quad \text{se g é contínua em } \lim_{x \to a} f(x)$$</p>
+
+                <h2>Teorema do confronto</h2>
+                <p>O Teorema do Confronto é uma ferramenta muito útil para calcular limites de funções que são difíceis de avaliar diretamente. A ideia é simples: se uma função está “presa” entre duas outras funções, e essas duas funções têm o mesmo limite em um ponto, então a função do meio precisa ter o mesmo limite naquele ponto.</p>
+                <p>Imagine que você tem três amigos caminhando lado a lado. O amigo do meio não consegue passar dos dois da ponta. Se os dois da ponta chegam a um destino específico, o amigo do meio também chegará ao mesmo destino. É exatamente essa a lógica do teorema.</p>
+                <p>Formalmente, se temos três funções f(x), g(x) e h(x), e sabemos que g(x) ≤ f(x) ≤ h(x) quando x se aproxima de um ponto, e que g(x) e h(x) têm o mesmo limite nesse ponto, então o limite de f(x) também existe e é igual a esse limite comum.</p>
+                <p>Esse teorema é especialmente útil quando a função do meio é complicada, envolve senos, cossenos, raízes ou expressões que não conseguimos simplificar diretamente. Ele nos permite “capturar” o limite usando funções mais simples que a cercam.</p>
+
+                <p>Se existem três funções \(f(x), g(x) e  h(x)\) tais que:</p>
+                <p>$$g(x) \le f(x) \le h(x)$$</p>
+                <p>e se</p>
+                <p>$$\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L,$$</p>
+                <p>então</p>
+                <p>$$\lim_{x \to a} f(x) = L.$$</p>
+
+                <h2>Limites no infinito</h2>
+                <p>Limites no infinito nos ajudam a entender o comportamento de uma função quando a variável cresce muito ou muito negativamente, ou seja, quando x tende para mais ou menos infinito. A ideia é observar para qual valor a função está se aproximando quando x fica muito grande (positivo ou negativo).</p>
+                <p>Por exemplo, algumas funções “se estabilizam” em torno de um valor quando x cresce muito. Isso significa que, mesmo que nunca cheguemos a infinito de fato, a função se aproxima cada vez mais de um número específico. Esse número é chamado limite da função no infinito.</p>
+                <p>Além disso, os limites no infinito são úteis para estudar assíntotas horizontais de gráficos. Se uma função tende a um número L quando x vai para infinito, isso indica que o gráfico da função se aproxima de uma linha horizontal y = L à medida que avançamos para valores grandes de x.</p>
+                <p>Também podemos analisar funções que crescem sem limite, como polinômios de grau maior que zero. Nesses casos, dizemos que o limite é infinito positivo ou negativo, indicando que a função aumenta ou diminui sem parar à medida que x cresce muito.</p>
+                <p>Em resumo, os limites no infinito nos mostram a tendência de uma função quando a variável se torna muito grande ou muito pequena, permitindo entender o comportamento de longo prazo da função e identificar assíntotas horizontais ou crescimento ilimitado.</p>
+                <p>Se uma função \(f(x)\) tende a um valor L quando x cresce muito, escrevemos:</p>
+                <p>$$\lim_{x \to \infty} f(x) = L$$</p>
+                <p>Se a função tende a crescer sem limite positivo:</p>
+                <p>$$\lim_{x \to \infty} f(x) = \infty$$</p>
+                <p>Se a função tende a crescer sem limite negativo:</p>
+                <p>$$\lim_{x \to \infty} f(x) = -\infty$$</p>
+                <p>Da mesma forma, podemos analisar limites quando x tende a menos infinito:</p>
+                <p>$$\lim_{x \to -\infty} f(x) = L$$</p>
+                <p>$$\lim_{x \to -\infty} f(x) = \infty$$</p>
+                <p>$$\lim_{x \to -\infty} f(x) = -\infty$$</p>
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div class="derivadas">
+                <h1>Derivadas</h1>
+                <h2>Divisão de conteudo :</h2>
+                <ul>
+                    <li>Definição intuitiva de derivadas</li>
+                    <li>Definição formal de derivadas</li>
+                    <li>Derivadas clássicas</li>
+                    <li>Propriedades das derivadas</li>
+                    <li>L'Hôpital</li>
+                    <li>Pontos criticos</li>
+                </ul>
+
+                <h2>Definição intuitiva de derivadas</h2>
+                <p>A ideia intuitiva de derivada surge do conceito de taxa de variação. Quando observamos uma função, podemos perceber que ela muda de valor à medida que alteramos a variável de entrada. A derivada mede exatamente o quanto essa mudança ocorre. Em outras palavras, ela indica a velocidade com que o valor da função varia em relação à variável.</p>
+                <p>Imagine, por exemplo, um carro se movendo em uma estrada. O gráfico da distância percorrida em função do tempo mostra uma linha crescente. A derivada nesse caso representa a velocidade do carro, ou seja, o quanto a distância aumenta a cada instante. Se a derivada for positiva, o carro está avançando; se for negativa, está voltando; e se for zero, ele está parado.</p>
+                <p>De forma mais simples, a derivada é o resultado de observar como a função muda quando nos aproximamos de um ponto específico. Para isso, analisamos dois pontos muito próximos no gráfico e traçamos a reta que passa por eles, chamada de secante. À medida que aproximamos os pontos, essa reta vai se transformando em uma reta tangente, que encosta na curva em apenas um ponto. A inclinação dessa reta tangente é o valor da derivada naquele ponto.</p>
+                <p>Portanto, de maneira intuitiva, derivar uma função significa encontrar a inclinação da curva em um ponto ou descobrir a taxa de variação instantânea de uma grandeza em relação a outra. Essa ideia está presente em muitos fenômenos do dia a dia, como a velocidade, o crescimento populacional, o fluxo de corrente elétrica ou o resfriamento de um corpo.</p>
+
+                <h2>Definição formal de derivada</h2>
+                <p>A definição formal de derivada é a forma precisa de expressar a taxa de variação instantânea de uma função em um ponto. Enquanto a definição intuitiva fala sobre inclinação ou velocidade de mudança, a definição formal usa limites para garantir rigor matemático.</p>
+                <p>Dizemos que uma função é derivável em um ponto quando conseguimos calcular a inclinação da reta tangente ao gráfico da função naquele ponto usando o limite da razão entre a variação da função e a variação da variável.</p>
+                <p>Em outras palavras, analisamos a diferença entre os valores da função em dois pontos próximos e depois deixamos a distância entre esses pontos tender a zero. O resultado desse limite é o valor da derivada no ponto.</p>
+                <p>Matematicamente, essa definição garante que estamos capturando a taxa de variação exata, independentemente do quão pequena seja a mudança na variável. Se o limite existe, a função é derivável naquele ponto e a derivada é única.</p>
+
+                 <p>$$f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$</p>
+                 <p>$$f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$$</p>
+
+                 <h2>Derivadas clássicas</h2>
+                 <h3>Função constante</h3>
+                 <p>Se a função é constante, sua derivada é zero :</p>
+                 <p>$$\frac{d}{dx}[c] = 0$$</p>
+                 <h3>Função identidade</h3>
+                 <p>A derivada da função identidade é 1 :</p>
+                 <p>$$\frac{d}{dx}[x] = 1$$</p>
+                 <h3>Potência</h3>
+                 <p>A derivada de X elevado a uma potência n é dada por :</p>
+                 <p>$$\frac{d}{dx}[x^n] = n \cdot x^{n-1}$$</p>
+                 <h3>Função exponencial</h3>
+                 <p>A derivada da função exponencial com base e é ela mesma:</p>
+                 <p>$$\frac{d}{dx}[e^x] = e^x$$</p>
+
+
+
+
+
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            <div class="integrais">
+                <h1>integrais</h1>
+                <h2>Divisão de conteudos</h2>
+                <ul>
+                    <li>Definição intuitiva de integrais</li>
+                    <li>Primitivas</li>
+                    <li>integral de riemann</li>
+                    <li>Propriedades das integrais</li>
+                    <li>Mudança de variavel</li>
+                    <li>integrais por partes</li>
+                    <li>Integrais clássicos</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Gabriel J. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+</body>
+</html>
