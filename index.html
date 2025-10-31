@@ -137,9 +137,35 @@
                  <p>A derivada da função exponencial com base e é ela mesma:</p>
                  <p>$$\frac{d}{dx}[e^x] = e^x$$</p>
 
+                 <h2>Propriedades das derivadas</h2>
+                 <h3>Soma</h3>
+                 <p>\(\frac{d}{dx}[f(x)+g(x)] = f'(x) + g'(x)\)</p>
+                 <h3>Produto por constante</h3>
+                 <p>\(\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)\)</p>
+                 <h3>Produto</h3>
+                 <p>\(\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)\)</p>
+                 <h3>Quociente</h3>
+                 <p>\(\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}\)</p>
 
+                 <h2>Regra da cadeia</h2>
+                 <p>A regra da cadeia é uma das propriedades mais importantes das derivadas, pois permite calcular a derivada de funções compostas, ou seja, quando uma função está dentro de outra. Ela mostra como as taxas de variação se relacionam em uma composição. Em termos simples, se temos uma função f de g de x, a derivada é o produto da derivada da função externa f avaliada em g de x pela derivada da função interna g de x. Essa ideia representa como uma pequena mudança em x afeta g de x, e como essa variação, por sua vez, influencia f de g de x. A regra da cadeia é fundamental em cálculo, sendo amplamente usada em problemas de física, engenharia e outras áreas que envolvem funções dependentes entre si.</p>
+                 <p>\(\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)\)</p>
 
+                 <h2>L'Hopital</h2>
+                 <p>A regra de L’Hôpital é um método utilizado para resolver limites que geram formas indeterminadas, como zero dividido por zero ou infinito dividido por infinito. Ela diz que, nessas situações, é possível substituir as funções originais por suas derivadas e calcular novamente o limite. Em outras palavras, se temos uma função f dividida por g que leva a uma indeterminação, podemos derivar o numerador e o denominador separadamente e tentar calcular o novo limite. Essa regra é muito útil para simplificar expressões e encontrar resultados de forma mais direta quando outros métodos não funcionam.</p>
+                 <h3>Fórmula</h3>
+                 <p>Se o limite de \(\frac{f(x)}{g(x)}\) resultar em uma forma indeterminada \(\frac{0}{0}\) ou \(\frac{\infty}{\infty}\), então:</p>
+                 <p>\(\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\), desde que o limite do lado direito exista.</p>
 
+                 <h2>Pontos criticos</h2>
+                 <p>Os pontos críticos de uma função são os valores de x em que a derivada primeira é igual a zero ou não existe. Esses pontos são importantes porque indicam possíveis máximos, mínimos ou pontos de inflexão da função. Para descobrir o tipo de ponto, normalmente se usa a segunda derivada: se ela for positiva, o ponto é um mínimo local; se for negativa, é um máximo local; e se for igual a zero, o teste não permite concluir o tipo de ponto.</p>
+                 <h3>Definição</h3>
+                 <p>Os pontos críticos de uma função \( f(x) \) são os valores de \( x \) em que \( f'(x) = 0 \) ou \( f'(x) \) não existe.</p>
+
+                 <h3>Importância</h3>
+                 <p>Esses pontos são importantes porque podem indicar máximos, mínimos ou pontos de inflexão da função. 
+                 Para classificá-los, costuma-se usar o teste da segunda derivada: se \( f''(x) > 0 \), o ponto é um mínimo local; 
+                 se \( f''(x) < 0 \), é um máximo local; e se \( f''(x) = 0 \), o teste é inconclusivo.</p>
 
             </div>
             <hr>
@@ -156,8 +182,193 @@
                     <li>Propriedades das integrais</li>
                     <li>Mudança de variavel</li>
                     <li>integrais por partes</li>
-                    <li>Integrais clássicos</li>
                 </ul>
+
+                <h2>Definição intuitiva de integrais</h2>
+                <p>De forma intuitiva, a integral de uma função representa a soma das áreas sob a sua curva em um determinado intervalo. Para entender isso, imagine dividir a região abaixo da curva em vários pequenos retângulos. Quanto mais finos esses retângulos forem, mais próxima ficará a soma de suas áreas do valor real da área total. Quando consideramos infinitos retângulos de largura praticamente nula, obtemos a integral, que é o valor exato dessa área. Em outras palavras, a integral é o limite da soma de pequenas áreas, servindo para medir a acumulação de algo, como distância, área ou volume, de maneira contínua.</p>
+                <h3>Ideia básica</h3>
+                <p>
+                Intuitivamente, a integral de uma função \( f(x) \) em um intervalo \([a, b]\) representa a soma das áreas sob a curva dessa função.
+                Se dividirmos o intervalo em pequenos pedaços de largura \( \Delta x \), podemos aproximar a área total somando os retângulos formados:
+                \(\sum f(x_i)\Delta x\).
+                </p>
+                <h3>Definição como limite</h3>
+                <p>
+                À medida que diminuímos o tamanho desses pedaços, o valor da soma se aproxima de um número fixo, que é a integral definida:
+                \(\int_a^b f(x)\,dx = \lim_{\Delta x \to 0}\sum f(x_i)\Delta x\).
+                Assim, a integral é o limite da soma das áreas infinitamente pequenas sob a curva.
+                </p>
+                
+                <h2>Primitivas</h2>
+                <p>Chamamos de primitiva uma função cuja derivada é igual a outra função dada. Em outras palavras, encontrar a primitiva de uma função é realizar o processo inverso da derivação. O conjunto de todas as primitivas de uma função é representado pela integral indefinida, que sempre inclui uma constante chamada constante de integração. Essa constante aparece porque, ao derivar qualquer número fixo, o resultado é zero, o que faz com que várias funções diferentes tenham a mesma derivada. As primitivas são fundamentais para calcular integrais e resolver problemas que envolvem acumulação e área.</p>
+                <h3>Definição</h3>
+                <p>
+                Dizemos que \( F(x) \) é uma primitiva de \( f(x) \) se a derivada de \( F(x) \) for igual a \( f(x) \), ou seja,
+                \( F'(x) = f(x) \).
+                </p>
+                <h3>Relação com a integral</h3>
+                <p>
+                O conjunto de todas as primitivas de uma função \( f(x) \) é representado pela integral indefinida:
+                \(\int f(x)\,dx = F(x) + C\), onde \( C \) é a constante de integração.
+                Essa constante aparece porque a derivada de qualquer número constante é zero, o que faz com que todas as funções
+                que diferem apenas por uma constante tenham a mesma derivada.
+                </p>
+
+                <h2>Integral de Riemann</h2>
+                <p>A integral de Riemann de uma função em um intervalo é definida como o limite das somas de retângulos que aproximam a área sob a curva. Para entender, imagine dividir o intervalo em várias partes pequenas e construir retângulos cuja altura seja determinada pelo valor da função em cada subdivisão. Quanto mais finos forem esses retângulos, mais precisa será a aproximação da área total. Quando consideramos infinitos retângulos de largura praticamente nula, obtemos a integral de Riemann, que é o valor exato da área sob a curva. Essa definição é fundamental para o cálculo das integrais definidas e para a compreensão da acumulação contínua de quantidades.</p>
+                <h3>Definição Formal</h3>
+                <p>
+                Seja f uma função limitada definida no intervalo [a,b]. Considere uma partição P do intervalo, 
+                \( P = \{x_0, x_1, \dots, x_n\} \) com \( a = x_0 < x_1 < \dots < x_n = b \). 
+                Para cada subintervalo [x_{i-1}, x_i], escolhe-se um ponto \(\xi_i\). 
+                A soma de Riemann associada é:
+                </p>
+                <p>
+                \[
+                S(f,P) = \sum_{i=1}^{n} f(\xi_i) \Delta x_i, \quad \Delta x_i = x_i - x_{i-1}.
+                \]
+                </p>
+                <p>
+                A função f é integrável no sentido de Riemann se o limite das somas de Riemann existir quando a norma da partição tende a zero:
+                </p>
+                <p>
+                \[
+                \int_a^b f(x)\,dx = \lim_{\|P\| \to 0} \sum_{i=1}^{n} f(\xi_i) \Delta x_i,
+                \]
+                onde \(\|P\|\) é o tamanho do maior subintervalo.
+                </p>
+                <h3>Intuição Geométrica</h3>
+                <p>
+                Intuitivamente, a integral de Riemann representa a área sob a curva de f no intervalo [a,b]. 
+                Cada soma de Riemann aproxima esta área através de retângulos, e à medida que os subintervalos se tornam infinitamente pequenos, 
+                a soma converge para o valor exato da integral definida.
+                </p>
+
+                <h2>Propriedades das Integrais</h2>
+
+  <h3>Linearidade</h3>
+  <p>
+    A integral de uma soma é a soma das integrais, e a integral de uma constante multiplicada por uma função 
+    é igual à constante vezes a integral da função:
+  </p>
+  <p>
+    \[
+      \int_a^b [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b g(x)\,dx
+    \]</p>
+  <p>
+    \[
+      \int_a^b c \cdot f(x)\,dx = c \cdot \int_a^b f(x)\,dx
+    \]
+  </p>
+
+  <h3>Intervalo de integração</h3>
+  <p>
+    A integral sobre um intervalo pode ser dividida em subintervalos consecutivos:
+  </p>
+  <p>
+    \[
+      \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+    \]
+  </p>
+
+  <h3>Troca de limites</h3>
+  <p>
+    Inverter os limites de integração muda o sinal da integral:
+  </p>
+  <p>
+    \[
+      \int_a^b f(x)\,dx = - \int_b^a f(x)\,dx
+    \]
+  </p>
+
+  <h3>Integral da função constante</h3>
+  <p>
+    A integral de uma função constante c em [a,b] é igual a c multiplicado pelo comprimento do intervalo:
+  </p>
+  <p>
+    \[
+      \int_a^b c\,dx = c \cdot (b - a)
+    \]
+  </p>
+
+  <h3>Funções positivas e negativas</h3>
+  <p>
+    Se f(x) é maior ou igual a g(x) em todo o intervalo [a,b], então a integral de f é maior ou igual à integral de g:
+  </p>
+  <p>
+    \[
+      f(x) \ge g(x) \implies \int_a^b f(x)\,dx \ge \int_a^b g(x)\,dx
+    \]
+  </p>
+
+            <h2>Mudança de variaveis</h2>
+            <p>A mudança de variáveis em integrais, também chamada de substituição, é uma técnica usada para simplificar o cálculo de integrais. Consiste em substituir a variável original por uma nova variável de forma que a integral se torne mais fácil de resolver.</p>
+            <p>Se escolhemos uma nova variável u que dependa de x, a diferencial dx é substituída pela derivada de x em relação a u vezes du. Dessa forma, a integral original é transformada em uma nova integral em termos de u.</p>
+            <p>Essa técnica permite transformar integrais complicadas em formas conhecidas ou mais simples, sendo muito útil em integrais definidas e indefinidas, como aquelas que envolvem funções trigonométricas, exponenciais ou racionais.</p>
+              <h3>Definição</h3>
+  <p>
+    A mudança de variáveis, também conhecida como substituição, é uma técnica utilizada para simplificar a 
+    integração de funções. Consiste em substituir a variável original x por uma nova variável u, escolhida de forma 
+    que a integral se torne mais fácil de calcular.
+  </p>
+
+  <h3>Fórmula Geral</h3>
+  <p>
+    Se u = g(x) é uma função diferenciável, então:
+  </p>
+  <p>
+    \[
+      \int f(x)\,dx = \int f(g^{-1}(u)) \frac{dx}{du}\,du
+    \]
+  </p>
+  <p>
+    Em termos mais comuns, se u = g(x), então dx = g'(x) du, e a integral se transforma em:
+  </p>
+  <p>
+    \[
+      \int f(x)\,dx = \int f(g(x)) g'(x)\,dx
+    \]
+  </p>
+
+  <h3>Intuição</h3>
+  <p>
+    A ideia principal é que, ao substituir a variável, podemos transformar uma integral complicada 
+    em uma integral mais simples, muitas vezes reduzindo-a a uma forma conhecida. Esta técnica é amplamente usada em 
+    integrais definidas e indefinidas, incluindo integrais trigonométricas, exponenciais e racionais.
+  </p>
+
+        <h2>Integrais por partes</h2>
+        <p>A integração por partes é uma técnica baseada na regra do produto das derivadas. Ela permite transformar a integral de um produto de funções em uma integral mais simples.</p>
+        <p>Para aplicá-la, escolhe-se uma função u, que será derivada, e uma função v derivada, que será integrada. Depois calcula-se a derivada de u e a integral de v derivada, e aplica-se a fórmula: a integral do produto é igual a u multiplicado por v, menos a integral da derivada de u multiplicada por v.</p>
+        <p>Essa técnica é útil quando uma das funções se simplifica ao ser derivada e a outra é fácil de integrar. Ela é amplamente usada para integrais de produtos envolvendo funções polinomiais, exponenciais, logaritmos e trigonométricas.</p>
+        
+  <h3>Fórmula</h3>
+  <p>
+    A técnica de integração por partes é baseada na regra do produto para derivadas. 
+    Para duas funções diferenciáveis u(x) e v(x), temos:
+  </p>
+  <p>
+    \[
+      \int u(x) v'(x)\,dx = u(x) v(x) - \int u'(x) v(x)\,dx
+    \]
+  </p>
+
+  <h3>Procedimento</h3>
+  <p>
+    1. Identificar na integral uma função u(x) que será derivada e uma função v'(x) que será integrada.  
+    2. Calcular u'(x) e a integral de v'(x), obtendo v(x).  
+    3. Aplicar a fórmula da integração por partes: multiplicar u(x) por v(x) e subtrair a integral de u'(x) v(x).  
+    4. Simplificar e, se necessário, repetir o processo para a nova integral.
+  </p>
+
+  <h3>Intuição</h3>
+  <p>
+    A integração por partes transforma a integral de um produto de funções em uma integral geralmente mais simples. 
+    É especialmente útil quando um dos fatores se torna mais simples ao ser derivado, e o outro é facilmente integrável.
+  </p>
+
+
+
             </div>
         </section>
 
